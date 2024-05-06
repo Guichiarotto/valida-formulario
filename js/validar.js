@@ -8,6 +8,7 @@ var email = document.querySelector("#inputEmail");
 var emailHelp = document.querySelector("#inputEmailHelp");
 var senha = document.querySelector("#inputPassword");
 var senhaHelp = document.querySelector("#inputPasswordHelp");
+var meter = document.querySelector("#passStrengthMeter");
 
 /*declarando o evento listener para o campos de texto do form. 
 Uma vez o foco do campo inputName mude, será chamada a função validarNome*/
@@ -145,8 +146,20 @@ senha.addEventListener("focusout", () => {
   if (nivelSeguranca === "Senha inválida") {
     senhaHelp.textContent = "Senha inválida";
     senhaHelp.style.color = "red";
-  } else {
+  } else if (nivelSeguranca === "fraca") {
+    senhaHelp.textContent = "Senha " + nivelSeguranca;
+    senhaHelp.style.color = "red";
+    meter.value = 11;
+    meter.style.color = "red";
+  } else if (nivelSeguranca === "moderada") {
+    senhaHelp.textContent = "Senha " + nivelSeguranca;
+    senhaHelp.style.color = "orange";
+    meter.value = 21;
+    meter.style.color = "orange";
+  } else if (nivelSeguranca === "forte") {
     senhaHelp.textContent = "Senha " + nivelSeguranca;
     senhaHelp.style.color = "green";
+    meter.value = 30;
+    meter.style.color = "green";
   }
 });
