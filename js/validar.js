@@ -146,15 +146,16 @@ senha.addEventListener("focusout", () => {
   if (nivelSeguranca === "Senha inválida") {
     senhaHelp.textContent = "Senha inválida";
     senhaHelp.style.color = "red";
+    meter.value = 0;
   } else if (nivelSeguranca === "fraca") {
     senhaHelp.textContent = "Senha " + nivelSeguranca;
     senhaHelp.style.color = "red";
-    meter.value = 11;
+    meter.value = 10;
     meter.style.color = "red";
   } else if (nivelSeguranca === "moderada") {
     senhaHelp.textContent = "Senha " + nivelSeguranca;
     senhaHelp.style.color = "orange";
-    meter.value = 21;
+    meter.value = 20;
     meter.style.color = "orange";
   } else if (nivelSeguranca === "forte") {
     senhaHelp.textContent = "Senha " + nivelSeguranca;
