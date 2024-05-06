@@ -1,4 +1,6 @@
-//criando os objetos dos elementos de texto do form
+/*
+Guilherme Chiarotto de Moraes - NUSP: 12745229
+*/
 
 var nome = document.querySelector("#inputName");
 var nomeHelp = document.querySelector("#inputNameHelp");
@@ -137,7 +139,7 @@ function validarSenha(senha) {
       return "forte";
     }
   }
-  //não sei o que retornar quando a senha não faz parte de nenhum dos níveis
+  //não sei o que retornar quando a senha não faz parte de nenhum dos níveis, então coloquei como fraca
   return "fraca";
 }
 
