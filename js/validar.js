@@ -57,10 +57,10 @@ ano.addEventListener("focusout", () => {
 
   if (anoTrimado.match(regexAno) == null) {
     //muda o conteúdo e o estilo do objeto nomeHelp que referencia o elemento html com id=inputYearHelp
-    anoHelp.textContent = "Ano inválido";
+    anoHelp.textContent = "Ano Inválido!";
     anoHelp.style.color = "red";
   } else if (parseInt(anoTrimado) < 1900 || parseInt(anoTrimado) > 2022) {
-    anoHelp.textContent = "Ano inválido";
+    anoHelp.textContent = "Ano Inválido!";
     anoHelp.style.color = "red";
   } else {
     anoHelp.textContent = "";
