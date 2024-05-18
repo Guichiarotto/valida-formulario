@@ -11,6 +11,8 @@ var emailHelp = document.querySelector("#inputEmailHelp");
 var senha = document.querySelector("#inputPassword");
 var senhaHelp = document.querySelector("#inputPasswordHelp");
 var meter = document.querySelector("#passStrengthMeter");
+const buttonSend = document.querySelector("#button_send");
+var sendHelp = document.querySelector("#ButtonSendHelp");
 
 /*declarando o evento listener para o campos de texto do form. 
 Uma vez o foco do campo inputName mude, será chamada a função validarNome*/
@@ -164,5 +166,23 @@ senha.addEventListener("focusout", () => {
     senhaHelp.style.color = "green";
     meter.value = 30;
     meter.style.color = "green";
+  }
+});
+
+buttonSend.addEventListener("click", () => {
+  if (
+    nomeHelp.textContent != "" ||
+    anoHelp.textContent != "" ||
+    emailHelp.textContent != "" ||
+    (senhaHelp.textContent != "" &&
+      senhaHelp.textContent != "Senha fraca" &&
+      senhaHelp.textContent != "Senha moderada" &&
+      senhaHelp.textContent != "Senha forte")
+  ) {
+    sendHelp.textContent = "Seus dados não foram registrados";
+    sendHelp.style.color = "red";
+  } else {
+    sendHelp.textContent = "Seus dados foram registrados";
+    sendHelp.style.color = "green";
   }
 });
