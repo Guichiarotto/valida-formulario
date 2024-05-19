@@ -25,18 +25,18 @@ neste caso o objeto 'nome'
 
 function validarNome(e) {
   //declaração da expressão regular para definir o formato de um nome válido
-  const regexNome = /^[A-Z][a-z]+ [A-Z][a-z]+$/;
+  const regexNome = /^([A-Z][a-z]*)( [A-Z][a-z]*)*$/;
 
   console.log(e); //impressão em console do objeto evento e
   console.log(e.target.value); //impressão em console do valor do objeto 'nome' que originou o evento
 
   if (e.target.value.trim().match(regexNome) == null) {
     //muda o conteúdo e o estilo do objeto nomeHelp que referencia o elemento html com id=inputNameHelp
-    nomeHelp.textContent = "Formato de nome inválido";
+    nomeHelp.textContent = "Nome inválido";
     nomeHelp.style.color = "red";
   } else if (e.target.value.trim().replace(" ", "").length <= 6) {
     //testar tamanho removendo espaços
-    nomeHelp.textContent = "O nome deve conter mais que 6 caracteres";
+    nomeHelp.textContent = "Nome inválido";
     nomeHelp.style.color = "red";
   } else {
     nomeHelp.textContent = "";
@@ -60,7 +60,7 @@ ano.addEventListener("focusout", () => {
     anoHelp.textContent = "Ano inválido";
     anoHelp.style.color = "red";
   } else if (parseInt(anoTrimado) < 1900 || parseInt(anoTrimado) > 2022) {
-    anoHelp.textContent = "O ano deve estar entre 1900 e 2022";
+    anoHelp.textContent = "Ano inválido";
     anoHelp.style.color = "red";
   } else {
     anoHelp.textContent = "";
