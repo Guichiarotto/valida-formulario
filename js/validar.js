@@ -101,7 +101,7 @@ function validarSenha(senha) {
   }
 
   // Verifica se a senha contém o nome ou ano de nascimento do usuário
-  const nomeUsuario = nome.value.split(" ");
+  const nomeUsuario = nome.value.toLowerCase().split(" ");
   const anoNascimento = ano.value;
 
   if (
